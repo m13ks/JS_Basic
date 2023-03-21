@@ -19,4 +19,4 @@ function CancelableAccumulator(startingValue) {
 }
   
   
-CancelableAccumulator.prototype = Object.create(Accumulator.prototype);s
+CancelableAccumulator.prototype = Object.create(Accumulator.prototype);
