@@ -5,12 +5,13 @@ const xTime = setInterval(function() {
     const now = new Date().getTime();
     const xTimeLeft = countdownDate - now;
 
-    const hours = Math.floor(xTimeLeft / (1000 * 60 * 60));
+    const days = Math.floor(xTimeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((xTimeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((xTimeLeft % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((xTimeLeft % (1000 * 60)) / 1000);
 
     const xTimeDisplay = document.getElementById("countdown");
-    xTimeDisplay.innerHTML = hours + " г " + minutes + " х " + seconds + " с";
+    xTimeDisplay.innerHTML = days + " д " + hours + " г " + minutes + " х " + seconds + " с";
 
     if (xTimeLeft < 0) {
         clearInterval(xTime);
